@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mepo Learn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Original background color */
+            color: #ffffff; /* Original text color */
+            z-index: 1; /* Ensures content is above the background wave */
+        }
+
+        /* Background Wave Effect */
+        .background-wave {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(135deg, rgba(0, 0, 139, 0.2), rgba(0, 0, 139, 0.4), transparent);
+            animation: waveEffect 8s infinite ease-in-out;
+            z-index: -1; /* Make sure it's behind all other content */
+        }
+
+        @keyframes waveEffect {
+            0% {
+                top: -50%;
+                left: -50%;
+                opacity: 0.3;
+            }
+            10% {
+                top: -47%;
+                left: -47%;
+                opacity: 0.35;
+            }
+            20% {
+                top: -43%;
+                left: -43%;
+                opacity: 0.4;
+            }
+            30% {
+                top: -40%;
+                left: -40%;
+                opacity: 0.45;
+            }
+            40% {
+                top: -35%;
+                left: -35%;
+                opacity: 0.5;
+            }
+            50% {
+                top: -30%;
+                left: -30%;
+                opacity: 0.55;
+            }
+            60% {
+                top: -35%;
+                left: -35%;
+                opacity: 0.5;
+            }
+            70% {
+                top: -40%;
+                left: -40%;
+                opacity: 0.45;
+            }
+            80% {
+                top: -43%;
+                left: -43%;
+                opacity: 0.4;
+            }
+            90% {
+                top: -47%;
+                left: -47%;
+                opacity: 0.35;
+            }
+            100% {
+                top: -50%;
+                left: -50%;
+                opacity: 0.3;
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            margin: 20px 0;
+        }
+
+        .search-bar input {
+            width: 70%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #444;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #555;
+        }
+
+        .game-frame-container {
+            margin-top: 20px;
+            display: none; /* Initially hidden */
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        #fullscreen-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #fullscreen-button:hover {
+            background-color: #555;
+        }
+
+        #game-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-wave"></div> <!-- Background wave effect added here -->
+
+    <div class="container">
+        <h1>Mepo Proxy</h1>
+        <p>Enter a URL to proxy and load:</p>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="url-input" placeholder="Enter the URL you want to proxy..." />
+            <button onclick="loadURL()">Load</button>
+        </div>
+
+        <!-- Game Embed Frame Container -->
+        <div class="game-frame-container" id="game-frame-container">
+            <iframe id="game-frame"></iframe>
+            <button id="fullscreen-button" onclick="toggleFullScreen()">⛶</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to load the URL entered in the search bar
+        function loadURL() {
+            const urlInput = document.getElementById('url-input');
+            const gameFrameContainer = document.getElementById('game-frame-container');
+            const gameFrame = document.getElementById('game-frame');
+
+            // Validate the URL input
+            if (!urlInput.value) {
+                alert('Please enter a URL.');
+                return;
+            }
+
+            try {
+                const encodedUrl = encodeURIComponent(urlInput.value); // Encode the URL
+                gameFrame.src = `/proxy?target=${encodedUrl}`; // Pass the URL to the proxy
+                gameFrameContainer.style.display = 'block'; // Show the iframe
+            } catch (error) {
+                alert('Invalid URL. Please try again.');
+                console.error('URL Parsing Error:', error);
+            }
+        }
+
+        function toggleFullScreen() {
+            const gameFrameContainer = document.getElementById('game-frame-container');
+            if (!document.fullscreenElement) {
+                gameFrameContainer.requestFullscreen().catch((err) => {
+                    alert(`Error attempting to enable fullscreen mode: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // Trigger loadURL on Enter key press
+        document.getElementById('url-input').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                loadURL(); // Trigger loadURL on Enter key
+            }
+        });
+    </script>
+</body>
+</html>

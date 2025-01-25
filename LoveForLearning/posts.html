@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts - Love For Learning</title>
+    <link rel="stylesheet" href="learnstyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Love For Learning</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="posts.html" class="active">Posts</a></li>
+                <li><a href="tools.html">Tools</a></li>
+            </ul>
+        </nav>
+        <!-- Settings Icon -->
+        <div class="settings-icon">
+            <a href="#settings"><i class="fas fa-cog"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <section id="posts" class="posts-section">
+            <h2>Recent Posts</h2>
+            <div class="posts-list">
+                <!-- Placeholder for posts -->
+                <div class="post">
+                    <h4>Exploring New Learning Tools</h4>
+                    <p>An introduction to some of the best tools for students...</p>
+                    <a href="newTools.html">Read More</a> <!-- Link to navigate to full posts page -->
+                </div>
+                <div class="post">
+                    <h4>Effective Study Techniques</h4>
+                    <p>Learn how to improve your focus and retention with these methods...</p>
+                    <a href="study.html">Read More</a> <!-- Link to navigate to full posts page -->
+                </div>
+            </div>
+            <!-- Button to go to the editor page -->
+            <a href="editor.html" class="write-button">Write Your Own</a>
+        </section>
+        <script>
+            function fetchPosts() {
+                fetch('http://localhost:3001/api/posts') // Updated for new server
+                    .then((response) => response.json())
+                    .then((posts) => {
+                        const postsContainer = document.querySelector('.posts-container');
+                        postsContainer.innerHTML = ''; // Clear existing posts
+        
+                        posts.forEach((post) => {
+                            const postElement = document.createElement('div');
+                            postElement.className = 'post';
+                            postElement.innerHTML = `
+                                <p>${post.content}</p>
+                                <small>Posted on: ${new Date(post.timestamp).toLocaleString()}</small>
+                            `;
+                            postsContainer.appendChild(postElement);
+                        });
+                    })
+                    .catch((error) => {
+                        console.error('Error fetching posts:', error);
+                    });
+            }
+        
+            // Fetch posts on page load
+            document.addEventListener('DOMContentLoaded', fetchPosts);
+        </script>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Love For Learning. All rights reserved.</p>
+    </footer>
+</body>
+</html>

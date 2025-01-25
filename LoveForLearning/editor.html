@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write Your Post - Love For Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="learnstyles.css">
+</head>
+<body>
+    <header>
+        <h1>Love For Learning</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="posts.html">Posts</a></li>
+                <li><a href="tools.html">Tools</a></li>
+            </ul>
+        </nav>
+        <!-- Settings Icon -->
+        <div class="settings-icon">
+            <a href="#settings"><i class="fas fa-cog"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <section id="editor">
+            <h2>Write Your Post</h2>
+            <textarea id="postContent" placeholder="Write your post here..." rows="10" cols="50"></textarea>
+            <button id="publishButton">Publish</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Love For Learning. All rights reserved.</p>
+    </footer>
+
+    <script>
+            document.getElementById('publishButton').addEventListener('click', () => {
+        const content = document.getElementById('postContent').value;
+
+        if (!content.trim()) {
+            alert('Post content cannot be empty!');
+            return;
+        }
+
+        fetch('http://localhost:3001/api/posts', { // Updated for new server
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ content }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                alert('Post published successfully!');
+                document.getElementById('postContent').value = ''; // Clear the editor
+                console.log(data);
+            })
+            .catch((error) => {
+                console.error('Error publishing post:', error);
+            });
+    });
+        document.getElementById('publishButton').addEventListener('click', function() {
+            const postContent = document.getElementById('postContent').value;
+            if (postContent.trim() === "") {
+                alert("Please write something before publishing.");
+            } else {
+                alert("Sorry this feature is coming soon!");
+                // Here you could add a backend request to save the post in a database
+            }
+        });
+
+    </script>
+</body>
+</html>
