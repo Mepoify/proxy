@@ -13,9 +13,21 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212; /* Original background color */
-            color: #ffffff; /* Original text color */
-            z-index: 1; /* Ensures content is above the background wave */
+            background-color: #121212;
+            color: #ffffff; 
+            z-index: 1; 
+        }
+
+        .title {
+            text-align: center;
+            font-size: 5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 
+                3px 3px 5px rgba(255, 0, 0, 0.8),
+                -3px -3px 5px rgba(0, 0, 255, 0.8),
+                0px 0px 20px rgba(255, 255, 255, 1);
+            font-family: 'Arial', sans-serif;
         }
 
         /* Background Wave Effect */
@@ -169,7 +181,7 @@
     <div class="background-wave"></div> <!-- Background wave effect added here -->
 
     <div class="container">
-        <h1>Mepo Proxy</h1>
+        <h1 class="title">MepoHub</h1>
         <p>Enter a URL to proxy and load:</p>
 
         <!-- Search Bar -->
