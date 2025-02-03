@@ -60,7 +60,6 @@ Login password: **mepomin**
 | ✅ Smaller websites work fine | Fully functional |
 
 ## 🛠 Roadmap
-- ✅ Improve stability
 - 🔜 Connect LoveForLearning to the actual proxy
 - 🔜 Integrate message system
 - 🔜 Add a gray bar at the bottom with the logo and version
