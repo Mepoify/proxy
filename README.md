@@ -60,7 +60,7 @@ Login password: **mepomin**
 - 🔜 v1.00 launches
 
 ## 📜 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the the Unlicense - see the [LICENSE](LICENSE) file for details.
 
 ## 📩 Contact
 📧 t_yaseen@icloud.com
