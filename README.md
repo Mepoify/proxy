@@ -16,7 +16,12 @@
 
 ## 📸 Screenshots
 
-very soon
+<p align="center">
+  <img src="assets/mepohubHomePage.png" alt="MepoHub Homepage" width="80%">
+</p>
+<p align="center">
+  <img src="assets/mepohubIdPage.png" alt="MepoHub ID Page" width="80%">
+</p>
 
 ## 🛠 Installation
 
