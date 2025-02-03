@@ -10,6 +10,8 @@
 - 🔹 **Bypasses restrictions** at school and other networks
 - 🔹 **User-friendly with a simple id system that can be easily modified and redeployed to create your own links**
 - 🔹 **Funny message system** that displays a sassy message on load (built but to be integrated)
+- 🔹 **Big LoveForLearning website disguse** mostly for jokes (built but to be integrated)
+- 🔹 **Appealing background effects** with wave dark blue enchanted look
 
 ## 📸 Screenshots
 
