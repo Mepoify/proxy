@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="assets/mepohubLogoBar.png" alt="MepoHub Logo" width="100%">
-</p>
 
 **Mepo Hub** is an unlocked school web proxy that allows users to bypass restrictions and access websites easily.
 
