@@ -59,9 +59,7 @@ Login password: **mepomin**
 | ✅ Smaller websites work fine | Fully functional |
 
 ## 🛠 Roadmap
-- 🔜 Connect LoveForLearning to the actual proxy
-- 🔜 Integrate message system
-- 🔜 Add a gray bar at the bottom with the logo and version
+- 🔜 Switch proxy engine to UV (cause making my own is getting out of hand and im realizing theres nothing to gain from making my own)
 - 🔜 Fix /index.html bypass issue
 - 🔜 v1.00 launches
 
