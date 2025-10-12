@@ -1,14 +1,14 @@
 
 **Mepo Hub** is an unlocked school web proxy that allows users to bypass restrictions and access websites easily.
 
-## 🚀 Features
+## Features
 
 - 🔹 **Custom-built proxy** optimized for speed and accessibility
 - 🔹 **Bypasses restrictions** at school and other networks
-- 🔹 **User-friendly with a simple id system that can be easily modified and redeployed to create your own links**
-- 🔹 **Big LoveForLearning website disguse** mostly for jokes (built but to be integrated)
-- 🔹 **Appealing effects** with wave dark blue enchanted look
 - 🔹 **Full screen** ability on website
+- 🔹 **User-friendly with a simple id system that can be easily modified and redeployed to create your own links**
+- 🔹 **Appealing effects** with wave dark blue enchanted look
+- 🔹 **Big LoveForLearning website disguse** mostly for jokes (built but to be integrated)
 
 ## 📸 Screenshots
 
@@ -51,9 +51,8 @@ Login password: **mepomin**
 | Issue | Status |
 |-------|--------|
 | ❌ Google, YouTube and other bigger websites block requests | Needs better authentication and security |
-| ❌ Deployment is incomplete | LoveForLearning has not been connected|
 | ❌ You can bypass the password system by going to `oneofareurls.app/index.html | Simple but fixed soon |
-| ✅ Smaller websites work fine | Fully functional |
+| ✅ Smaller websites work fine
 
 ## 🛠 Roadmap
 - 🔜 Switch proxy engine to UV (cause making my own is getting out of hand and im realizing theres nothing to gain from making my own)
@@ -64,7 +63,7 @@ Login password: **mepomin**
 This project is licensed under the the Unlicense - see the [LICENSE](LICENSE) file for details.
 
 ## 📩 Contact
-📧 t_yaseen@icloud.com
+**Email**:t_yaseen@icloud.com
 
-💻 **GitHub**: [Mepoify](https://github.com/Mepoify)
+**GitHub**: [Mepoify](https://github.com/Mepoify)
 
