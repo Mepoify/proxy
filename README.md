@@ -52,7 +52,8 @@ Login password: **mepomin**
 |-------|--------|
 | ❌ Google, YouTube and other bigger websites block requests | Needs better authentication and security |
 | ❌ You can bypass the password system by going to `oneofareurls.app/index.html | Simple but fixed soon |
-| ✅ Smaller websites work fine
+
+> Smaller websites work fine
 
 ## 🛠 Roadmap
 - 🔜 Switch proxy engine to UV (cause making my own is getting out of hand and im realizing theres nothing to gain from making my own)
@@ -63,7 +64,7 @@ Login password: **mepomin**
 This project is licensed under the the Unlicense - see the [LICENSE](LICENSE) file for details.
 
 ## 📩 Contact
-**Email**:t_yaseen@icloud.com
+**Email**: t_yaseen@icloud.com
 
 **GitHub**: [Mepoify](https://github.com/Mepoify)
 
